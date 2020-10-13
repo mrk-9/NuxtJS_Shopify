@@ -1,0 +1,71 @@
+{
+  "name": "nuxt-shopify",
+  "version": "1.10.4",
+  "description": "Easy Shopify Buy client integration with Nuxt.js",
+  "author": {
+    "name": "Gomah <hi@gomah.fr>"
+  },
+  "keywords": [
+    "vue",
+    "nuxt",
+    "nuxt.js",
+    "shopify",
+    "shopify-buy",
+    "nuxt-shopify"
+  ],
+  "typings": "types/index.d.ts",
+  "main": "lib/module.js",
+  "files": [
+    "lib",
+    "types/*.d.ts"
+  ],
+  "repository": "https://github.com/Gomah/nuxt-shopify",
+  "homepage": "https://github.com/Gomah/nuxt-shopify",
+  "publishConfig": {
+    "access": "public"
+  },
+  "license": "MIT",
+  "scripts": {
+    "dev": "nuxt test/fixture",
+    "prepublishOnly": "yarn build",
+    "test:system": "NODE_ENV=test jest --testRegex \"/test/system/(.+)\\.test\\.ts$\"",
+    "build": "tsc -b",
+    "release": "yarn test && HUSKY_SKIP_HOOKS=1 standard-version && git push --follow-tags && npm publish",
+    "watch": "tsc --watch",
+    "test": "yarn test:lint && NODE_ENV=test jest",
+    "test:lint": "eslint --ext .js,.ts, src/"
+  },
+  "dependencies": {
+    "@types/shopify-buy": "^2.10.3",
+    "isomorphic-unfetch": "^3.1.0",
+    "shopify-buy": "2.11.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.11.5",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
+    "@nuxt/types": "^2.14.6",
+    "@types/consola": "^2.2.5",
+    "@types/jest": "^26.0.14",
+    "@types/jsdom": "^16.2.4",
+    "@types/node": "^14.11.8",
+    "@typescript-eslint/eslint-plugin": "^4.4.1",
+    "@typescript-eslint/parser": "^4.4.1",
+    "babel-jest": "^26.5.2",
+    "eslint": "^7.11.0",
+    "eslint-config-airbnb-typescript": "^11.0.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.3.0",
+    "jest": "^26.5.3",
+    "nuxt": "^2.14.6",
+    "prettier": "^2.1.2",
+    "request": "^2.88.2",
+    "request-promise-native": "^1.0.9",
+    "standard-version": "^9.0.0",
+    "ts-jest": "^26.4.1",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.0.3"
+  }
+}
